@@ -1,0 +1,45 @@
+void main() {
+  
+  //String
+  
+  /*Una constante se define en tiempo de compilación,
+   * una variable final se define en tiempo de ejecución
+   * por eso a una variable final se le puede asignar el resultado de una función
+   * */
+  
+  final String nombre='Sergio';
+  final int edad=34;
+  final double estatura=1.70;
+  
+  print('Hola $nombre, tienes $edad años y mides $estatura');
+  
+  
+  //Listas
+  
+  final List<int> numeros = [1,2,3,4,5];
+  numeros.add(6);
+  
+  print(numeros);
+  
+  final numeros2=List.generate(20, (int index)=>index);
+  print(numeros2);
+  
+  //Mapas
+  
+  var regalos= {
+    'primero': 'rosas',
+    'segundo': 'chocolates',
+    'tercero': 'pisco'
+  };
+  
+  print(regalos);
+  
+  //var regalos2= Map<int, dynamic>();
+  final regalos2= Map<int, dynamic>();
+  regalos2[1]='chocolates';
+  regalos2[2]='peluche';
+  
+  print(regalos2);
+  regalos2.addAll({3:'cervezas'});
+  print(regalos2);  
+}

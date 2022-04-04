@@ -1,0 +1,29 @@
+void main() {
+
+  //Acá instancio un objeto con la sintaxis estándar
+  //  final circulo= new Figura(nomb: 'Circulo', num:0);
+  //Acá instancio un objeto con a sintaxis reducida (no necesita new)
+  //final circulo= Figura(nombre: 'Circulo',numLados:0);
+  final circulo= Figura('Circulo',0);
+  print(circulo);
+  
+}
+
+class Figura {
+  String? nombre;
+  int? numLados;
+  
+  /*abreviado*/
+  //Figura({ required this.nombre, required this.numLados}); 
+  
+  Figura(String nombre, int lados) {
+    this.nombre=nombre;
+    this.numLados=lados;
+    
+    /*si recibes un null debes validarlo en algún lugar de tu código*/
+  } 
+  
+  String toString() {
+    return 'La figura es un ${this.nombre} y tiene ${this.numLados}';
+  }
+}
