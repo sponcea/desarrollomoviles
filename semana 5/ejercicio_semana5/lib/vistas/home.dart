@@ -9,10 +9,11 @@ class Home extends StatelessWidget {
   final caballero = ['Bronce', 'Plata', 'Oro'];
 
   /*Trabajamos con un json que debemos decodificar */
-  final jsonCaballeros = '{"1":"Bronce","2":"Plata", "3":"Oro", "4":"Corona"}';
+  final jsonCaballeros = '{"1":"Bronce","2":"Plata", "3":"Oro", "4":"Corona", "5":"Negros"}';
 
   @override
   Widget build(BuildContext context) {
+
     Map<String, dynamic> caballeros = jsonDecode(jsonCaballeros);
     return Scaffold(
         appBar: AppBar(
@@ -23,11 +24,11 @@ class Home extends StatelessWidget {
         body: ListView.separated(
           itemBuilder: (context, index) {
             return ListTile(
-              title: Text(caballeros[index]),
+              title: Text(caballeros.values.toList()[index]),
             );
           },
           separatorBuilder: (a, b) => Divider(),
-          itemCount: caballeros.length,
+          itemCount: caballeros.keys.length,
         ));
   }
 }
