@@ -9,11 +9,11 @@ class Home extends StatelessWidget {
   final caballero = ['Bronce', 'Plata', 'Oro'];
 
   /*Trabajamos con un json que debemos decodificar */
-  final jsonString = '{"url":"Facebook ","visitas":"200000"}';
+  final jsonCaballeros = '{"1":"Bronce","2":"Plata", "3":"Oro"}';
 
   @override
   Widget build(BuildContext context) {
-    Map jsonDecodificado = json.decode(jsonString);
+    Map<String, dynamic> caballeros = jsonDecode(jsonCaballeros);
     return Scaffold(
       appBar: AppBar(
         title: Text('Los caballeros del zodiaco'),
@@ -21,13 +21,9 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.grey,
       ),
       body: ListView(children: [
-        ...caballero
-            .map((tipoCaballero) => ListTile(title: Text(tipoCaballero)))
-            .toList(),
-        ListTile(
-          title: Text(jsonDecodificado['url']),
-          subtitle: Text(jsonDecodificado['visitas']),
-        )
+        ...caballeros.entries.map((caballero) => ListTile(
+              title: Text(caballero.value.toString()),
+            ))
       ]),
     );
   }
