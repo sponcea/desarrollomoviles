@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/**Creamos lista de caballeros de bronce leyendo de una lista */
 class ListaBronce extends StatelessWidget {
   final caballero = [
     'Seiya de pegaso',
