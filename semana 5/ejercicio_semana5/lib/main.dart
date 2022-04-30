@@ -1,6 +1,7 @@
 import 'package:ejercicio_semana5/vistas/home.dart';
 import 'package:ejercicio_semana5/vistas/lista1_container.dart';
 import 'package:ejercicio_semana5/vistas/lista1_listtile.dart';
+import 'package:ejercicio_semana5/vistas/lista_bronce.dart';
 import 'package:flutter/material.dart';
 
 void main() {
