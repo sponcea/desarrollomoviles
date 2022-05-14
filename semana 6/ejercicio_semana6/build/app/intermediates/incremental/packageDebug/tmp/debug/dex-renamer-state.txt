@@ -1,0 +1,4 @@
+#Fri May 06 19:28:29 COT 2022
+base.0=D\:\\Users\\DIA\\Desktop\\cursos dictados\\2022-1\\soluciones moviles\\Semana 6\\ejercicio_semana6\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
