@@ -8,6 +8,7 @@ class VistaHome extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(title: Text('Home')),
         body: ListView.separated(
+            physics: BouncingScrollPhysics(),
             itemBuilder: (context, index) => ListTile(
                 title: Text(menu[index].nombre),
                 leading: Icon(menu[index].icono),

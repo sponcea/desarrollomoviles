@@ -4,6 +4,8 @@ import 'package:ejercicio_semana7/vistas/vista_date.dart';
 import 'package:ejercicio_semana7/vistas/vista_fade.dart';
 import 'package:ejercicio_semana7/vistas/vista_form.dart';
 import 'package:ejercicio_semana7/vistas/vista_home.dart';
+import 'package:ejercicio_semana7/vistas/vista_infinitescroll.dart';
+import 'package:ejercicio_semana7/vistas/vista_slider.dart';
 import 'package:flutter/material.dart';
 
 class Rutas {
@@ -28,7 +30,17 @@ class Rutas {
         nombre: 'Date picker',
         ruta: 'date',
         icono: Icons.date_range,
-        vista: VistaDate())
+        vista: VistaDate()),
+    ItemMenu(
+        nombre: 'Slider',
+        ruta: 'slider',
+        icono: Icons.arrow_circle_right_outlined,
+        vista: VistaSlider()),
+    ItemMenu(
+        nombre: 'Infinite scroll',
+        ruta: 'infinite',
+        icono: Icons.image,
+        vista: VistaInfiniteScroll())
   ];
 
   static Map<String, Widget Function(BuildContext)> getRutas() {
