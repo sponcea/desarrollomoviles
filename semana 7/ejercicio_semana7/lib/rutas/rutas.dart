@@ -1,6 +1,8 @@
 import 'package:ejercicio_semana7/modelos/item_menu.dart';
+import 'package:ejercicio_semana7/vistas/vista_caballero_fetch.dart';
 import 'package:ejercicio_semana7/vistas/vista_circle_avatar.dart';
 import 'package:ejercicio_semana7/vistas/vista_date.dart';
+import 'package:ejercicio_semana7/vistas/vista_detalle_caballero.dart';
 import 'package:ejercicio_semana7/vistas/vista_fade.dart';
 import 'package:ejercicio_semana7/vistas/vista_form.dart';
 import 'package:ejercicio_semana7/vistas/vista_home.dart';
@@ -40,12 +42,20 @@ class Rutas {
         nombre: 'Infinite scroll',
         ruta: 'infinite',
         icono: Icons.image,
-        vista: VistaInfiniteScroll())
+        vista: VistaInfiniteScroll()),
+    ItemMenu(
+        nombre: 'Caballero fetch',
+        ruta: 'caballerofetch',
+        icono: Icons.sunny,
+        vista: VistaCaballeroFetch())
   ];
 
   static Map<String, Widget Function(BuildContext)> getRutas() {
     Map<String, Widget Function(BuildContext)> rutas = {};
     rutas.addAll({'home': (BuildContext context) => VistaHome()});
+    rutas.addAll({
+      'detallecaballero': (BuildContext context) => VistaDetalleCaballero()
+    });
     for (var item in menu) {
       rutas.addAll({item.ruta: (context) => item.vista});
     }
