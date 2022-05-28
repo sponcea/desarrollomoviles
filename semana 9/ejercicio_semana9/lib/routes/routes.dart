@@ -1,5 +1,6 @@
 import 'package:ejercicio_semana9/models/item_menu_home.dart';
-import 'package:ejercicio_semana9/screens/first_screen.dart';
+import 'package:ejercicio_semana9/screens/card_screen.dart';
+import 'package:ejercicio_semana9/screens/whatsapp_screen.dart';
 import 'package:ejercicio_semana9/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -12,10 +13,15 @@ class Routes {
         nombre: 'Home',
         screen: HomeScreenDinamico()),*/
     MenuItem(
-        ruta: 'screen1',
+        ruta: 'whatsapp',
         icono: Icons.check,
-        nombre: 'screen1',
-        screen: FirstScreen()),
+        nombre: 'Whatsapp Screen',
+        screen: WhatsappScreen()),
+    MenuItem(
+        ruta: 'card',
+        icono: Icons.check,
+        nombre: 'Card Screen',
+        screen: CardScreen()),
   ];
 
   /*Uso el menuItem para crear las rutas */
