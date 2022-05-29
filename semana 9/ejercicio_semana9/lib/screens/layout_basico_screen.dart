@@ -22,6 +22,10 @@ class LayoutBasicoScreen extends StatelessWidget {
 class _Imagen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    //La imagen no es background del contenedor
+    //Si el contenedor no tiene un tamano, toma la forma de la imagen,
+    //Si el contenedor tiene forma, la imagen, puede acomodarse usando la propiedad fit
+
     return Container(child: Image(image: AssetImage('assets/atardecer.jpeg')));
   }
 }

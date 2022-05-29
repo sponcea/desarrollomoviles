@@ -78,7 +78,8 @@ class _BackgroundImage extends StatelessWidget {
     return Container(
       //height: 250,
       decoration: BoxDecoration(
-          //El comportamiento de DecorationImage, requiere que el papa tenga un tamano establecido
+          //image es el background del contenedor
+          //depente del fit para quenga una forma
           image: DecorationImage(
               fit: BoxFit.cover,
               colorFilter: ColorFilter.mode(
