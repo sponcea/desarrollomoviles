@@ -1,5 +1,6 @@
 import 'package:ejercicio_semana9/models/item_menu_home.dart';
 import 'package:ejercicio_semana9/screens/card_screen.dart';
+import 'package:ejercicio_semana9/screens/layout_basico_screen.dart';
 import 'package:ejercicio_semana9/screens/whatsapp_screen.dart';
 import 'package:ejercicio_semana9/screens/home_screen.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +23,11 @@ class Routes {
         icono: Icons.check,
         nombre: 'Card Screen',
         screen: CardScreen()),
+    MenuItem(
+        ruta: 'layoutbasico',
+        icono: Icons.check,
+        nombre: 'Layout basico',
+        screen: LayoutBasicoScreen()),
   ];
 
   /*Uso el menuItem para crear las rutas */

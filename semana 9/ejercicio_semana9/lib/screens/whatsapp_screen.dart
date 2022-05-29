@@ -12,7 +12,7 @@ class WhatsappScreen extends StatelessWidget {
         //color: Colors.blue,
         child: SingleChildScrollView(
           child: Column(
-            children: [
+            children: const [
               SizedBox(
                 height: 20,
               ),
@@ -78,7 +78,7 @@ class _Izquierda extends StatelessWidget {
     return CircleAvatar(
       child: Icon(
         Icons.people,
-        //color: Colors.white,
+        color: Colors.white,
       ),
       backgroundColor: Colors.grey,
     );
@@ -94,7 +94,7 @@ class _Medio extends StatelessWidget {
       child: Column(
         //Cuando es una columna permite alinear con respecto al eje horizontal
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+        children: const [
           Text(
             'Sergio Ponce',
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
@@ -112,17 +112,19 @@ class _Medio extends StatelessWidget {
 class _Derecha extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text('8:18', style: TextStyle(color: Colors.green)),
-        CircleAvatar(
-            radius: 10,
-            backgroundColor: Colors.green,
-            child: Text(
-              '8',
-              style: TextStyle(fontSize: 12, color: Colors.white),
-            ))
-      ],
+    return Container(
+      child: Column(
+        children: [
+          Text('8:18', style: TextStyle(color: Colors.green)),
+          CircleAvatar(
+              radius: 10,
+              backgroundColor: Colors.green,
+              child: Text(
+                '8',
+                style: TextStyle(fontSize: 12, color: Colors.white),
+              ))
+        ],
+      ),
     );
   }
 }

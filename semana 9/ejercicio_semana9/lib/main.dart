@@ -15,6 +15,6 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         initialRoute: Routes.rutaInicial,
         routes: Routes.getRutas(),
-        theme: Tema.dark);
+        theme: Tema.light);
   }
 }

@@ -7,13 +7,13 @@ class CardScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Layout Card!!!')),
-      body: Card(),
+      body: _Card(),
     );
   }
 }
 
-class Card extends StatelessWidget {
-  const Card({
+class _Card extends StatelessWidget {
+  const _Card({
     Key? key,
   }) : super(key: key);
 
@@ -21,9 +21,12 @@ class Card extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         height: 250,
+        //El stack hara que se acomode dentro de todo el padre
         child: Stack(
           children: [
+            //Elemento 1
             _BackgroundImage(),
+            //Elemento 2
             Align(alignment: Alignment.bottomLeft, child: _Body())
           ],
         ));
@@ -52,7 +55,7 @@ class _Body extends StatelessWidget {
           ),
           Container(
             height: 3,
-            width: 150,
+            width: 180,
             color: Colors.green,
           ),
           Text(
@@ -73,7 +76,9 @@ class _BackgroundImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      //height: 250,
       decoration: BoxDecoration(
+          //El comportamiento de DecorationImage, requiere que el papa tenga un tamano establecido
           image: DecorationImage(
               fit: BoxFit.cover,
               colorFilter: ColorFilter.mode(

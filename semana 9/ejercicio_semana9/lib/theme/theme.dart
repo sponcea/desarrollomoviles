@@ -9,6 +9,6 @@ class Tema {
 
   static final ThemeData light = ThemeData.light().copyWith(
       primaryColor: colorPrimarioLight,
-      iconTheme: IconThemeData(color: Colors.red),
+      iconTheme: IconThemeData(color: colorPrimarioLight),
       appBarTheme: AppBarTheme(elevation: 0, color: colorPrimarioLight));
 }
