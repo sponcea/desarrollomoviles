@@ -1,6 +1,9 @@
 import 'package:ejercicio_semana9/models/item_menu_home.dart';
 import 'package:ejercicio_semana9/screens/card_screen.dart';
+import 'package:ejercicio_semana9/screens/gradiente_screen.dart';
 import 'package:ejercicio_semana9/screens/layout_basico_screen.dart';
+import 'package:ejercicio_semana9/screens/pageview_screen.dart';
+import 'package:ejercicio_semana9/screens/sliver_screen.dart';
 import 'package:ejercicio_semana9/screens/whatsapp_screen.dart';
 import 'package:ejercicio_semana9/screens/home_screen.dart';
 import 'package:flutter/material.dart';
@@ -28,6 +31,21 @@ class Routes {
         icono: Icons.check,
         nombre: 'Layout basico',
         screen: LayoutBasicoScreen()),
+    MenuItem(
+        ruta: 'sliver',
+        icono: Icons.check,
+        nombre: 'Sliver Screen',
+        screen: SliverScreen()),
+    MenuItem(
+        ruta: 'pageview',
+        icono: Icons.check,
+        nombre: 'PageView Screen',
+        screen: PageViewScreen()),
+    MenuItem(
+        ruta: 'gradiente',
+        icono: Icons.check,
+        nombre: 'Gradiente Screen',
+        screen: GradienteScreen()),
   ];
 
   /*Uso el menuItem para crear las rutas */
