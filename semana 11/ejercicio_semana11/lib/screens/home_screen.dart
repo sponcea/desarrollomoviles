@@ -1,8 +1,10 @@
 import 'package:ejercicio_semana11/database/db_singleton.dart';
 import 'package:ejercicio_semana11/database/my_db.dart';
 import 'package:ejercicio_semana11/models/scan_model.dart';
+import 'package:ejercicio_semana11/providers/scan_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -15,6 +17,9 @@ class HomeScreen extends StatelessWidget {
           actions: [
             IconButton(
                 onPressed: () {
+                  final scanProvider =
+                      Provider.of<ScanProvider>(context, listen: false);
+                  scanProvider.borrarScans();
                   print('Eliminar todos los scan');
                 },
                 icon: Icon(Icons.delete))
@@ -37,7 +42,11 @@ class _CustomScanButton extends StatelessWidget {
         onPressed: () async {
           // String barcodeScanRes = await FlutterBarcodeScanner.scanBarcode(
           //     '#BA1725', 'Cancelar', false, ScanMode.QR);
-          String barcodeScanRes = 'http://elcomercio.pe';
+          String barcodeScanRes = 'geo:-12.088642,-77.054860';
+          //El onPressed no va a actualizar ninguna vista, solo a insertar en la BD, entonces listen: false
+          final scanProvider =
+              Provider.of<ScanProvider>(context, listen: false);
+          scanProvider.insertScan(barcodeScanRes);
           print(barcodeScanRes);
         },
         child: Icon(Icons.center_focus_strong));
@@ -56,20 +65,27 @@ class _CustomBody extends StatelessWidget {
     //Validar conexion y  creacion  de tabla
     //DBSingleton.db.database;
     //Validar insert
-    final ScanModel scan = ScanModel(id: 3, valor: 'http://peru21.pe');
+    //final ScanModel scan = ScanModel(id: 3, valor: 'http://peru21.pe');
     //DBSingleton.db.insertarScan(scan);
     //Validar el update
     //DBSingleton.db.updateScan(scan);
     //DBSingleton.db.deleteScanById(24);
     //DBSingleton.db.getScanById(3).then((resultado) => print(resultado.valor));
     //DBSingleton.db.getAllScans().then((value) => print(value[3].valor));
-    DBSingleton.db.deleteAllScans();
+    //DBSingleton.db.deleteAllScans();
+    //este provider si esta atento a los  cambios de estado para que se pueda pintar
+    final scanProvider = Provider.of<ScanProvider>(context);
+    final scanList = scanProvider.scans;
+    scanProvider.cargarScans();
+
     return ListView.builder(
-      itemCount: 10,
+      itemCount: scanList.length,
       itemBuilder: (BuildContext context, int index) => ListTile(
-        title: Text('http://depor.com'),
-        subtitle: Text('id'),
-        leading: Icon(Icons.newspaper),
+        title: Text(scanList[index].valor),
+        subtitle: Text(scanList[index].id.toString()),
+        leading: scanList[index].valor.contains('http')
+            ? Icon(Icons.newspaper)
+            : Icon(Icons.map_outlined),
         trailing: Icon(Icons.arrow_forward_ios_rounded),
         onTap: () {
           print('Enviar a google maps o al navegador por defecto');
