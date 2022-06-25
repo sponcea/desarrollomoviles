@@ -35,6 +35,11 @@ class ScanProvider extends ChangeNotifier {
   }
 
   borrarScansById(int id) async {
+    //No podemos borrar de la vista antes que de la BD y eso ocurre con
+    //el Dismissible
+    //Por ello, luego de quitarlo de la vista, tambien debemos quitarlo de la lista scan
+    scans.removeWhere((element) => element.id == id);
+    //Finalmente actualizamos en la BD
     await DBSingleton.db.deleteScanById(id);
     cargarScans();
   }

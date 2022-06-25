@@ -1,5 +1,6 @@
 import 'package:ejercicio_semana11/providers/scan_provider.dart';
 import 'package:ejercicio_semana11/screens/home_screen.dart';
+import 'package:ejercicio_semana11/screens/maps_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -22,8 +23,11 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
           debugShowCheckedModeBanner: false,
           initialRoute: 'home',
-          routes: {'home': (BuildContext context) => HomeScreen()},
-          theme: ThemeData.dark()),
+          routes: {
+            'home': (BuildContext context) => HomeScreen(),
+            'maps': (BuildContext context) => MapSample()
+          },
+          theme: ThemeData.light()),
     );
   }
 }
