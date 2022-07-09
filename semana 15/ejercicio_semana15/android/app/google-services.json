@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "836407288726",
+    "project_id": "notificaciones2-bd8e2",
+    "storage_bucket": "notificaciones2-bd8e2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:836407288726:android:4e673df6246179b282b3b7",
+        "android_client_info": {
+          "package_name": "com.sergioponce.ejercicio_semana15"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "836407288726-v36siht1vnqg2ndapj7iupg8leg17h1k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sergioponce.ejercicio_semana15",
+            "certificate_hash": "b73692f2a7b3fcf7555b5520d02ebcde3c0ce899"
+          }
+        },
+        {
+          "client_id": "836407288726-8jcqobrh3rnjkam3oatist3fausu4l0t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcgDYizhPR2hoygcoDMm3nFQN2vzgFN2s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "836407288726-8jcqobrh3rnjkam3oatist3fausu4l0t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
