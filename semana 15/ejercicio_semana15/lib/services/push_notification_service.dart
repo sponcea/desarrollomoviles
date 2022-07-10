@@ -15,19 +15,19 @@ class PushNotificationService {
     print('App en Background: ${mensaje.messageId}');
     //Aca el _msjStream podria cambiar de estado
     print(mensaje.data);
-    _msjStream.add(mensaje.notification?.title ?? 'no tiene titulo');
+    _msjStream.add(mensaje.data['userid'] ?? 'no tiene userid');
   }
 
   static Future foregroundHandler(RemoteMessage mensaje) async {
     print('App en Foreground: ${mensaje.messageId}');
     print(mensaje.data);
-    _msjStream.add(mensaje.notification?.title ?? 'no tiene titulo');
+    _msjStream.add(mensaje.data['userid'] ?? 'no tiene userid');
   }
 
   static Future openAppHandler(RemoteMessage mensaje) async {
     print('Abriendo app desde background: ${mensaje.messageId}');
     print(mensaje.data);
-    _msjStream.add(mensaje.notification?.title ?? 'no tiene titulo');
+    _msjStream.add(mensaje.data['userid'] ?? 'no tiene userid');
   }
 
   static cargarFirebaseApp() async {

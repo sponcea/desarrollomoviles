@@ -1,4 +1,5 @@
 import 'package:ejercicio_semana15/screens/home_screen.dart';
+import 'package:ejercicio_semana15/screens/vista2_screen.dart';
 import 'package:ejercicio_semana15/services/push_notification_service.dart';
 import 'package:flutter/material.dart';
 
@@ -16,10 +17,18 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+  GlobalKey<ScaffoldMessengerState> messageKey =
+      GlobalKey<ScaffoldMessengerState>();
   void initState() {
     super.initState();
     PushNotificationService.msjStream.listen((msj) {
       print('Llego este mensaje: ${msj}');
+      //Mostrar nueva pantalla
+      //navigatorKey.currentState?.pushNamed('view', arguments: msj);
+      final snackBar = SnackBar(content: Text(msj));
+      //Mostrar mensaje abajo en un snackBar
+      messageKey.currentState?.showSnackBar(snackBar);
     });
   }
 
@@ -29,7 +38,12 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: 'home',
-      routes: {'home': (context) => HomeScreen()},
+      navigatorKey: navigatorKey,
+      scaffoldMessengerKey: messageKey,
+      routes: {
+        'home': (context) => HomeScreen(),
+        'view': (context) => VistaScreen()
+      },
     );
   }
 }
